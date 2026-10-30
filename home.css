@@ -12,6 +12,9 @@ h2 { font:600 var(--section-size)/1.4 var(--sans); color:var(--blue); margin-bot
 h3 { font:600 var(--title-size)/1.5 var(--sans); color:#263d54; }
 .site-header { position:sticky; top:0; z-index:30; display:flex; justify-content:space-between; gap:20px; align-items:center; padding:22px 0; background:#fff; box-shadow:0 1px 0 var(--line); }
 .wordmark { font:600 15px var(--serif); }
+.language-switch { display:inline-flex; align-items:center; gap:8px; white-space:nowrap; font-size:12px; }
+.language-switch [aria-current="page"] { font-weight:600; text-decoration:underline; text-underline-offset:4px; }
+:lang(zh-Hans) { --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif; }
 .site-header nav { display:flex; flex-wrap:wrap; gap:10px 24px; font-size:13px; }
 .identity { padding:28px; background:#f5f7fa url('assets/identity-background.png') right 18px top 14px / 200px 121px no-repeat; }
 .identity-person { display:grid; grid-template-columns:100px minmax(0,1fr); align-content:start; column-gap:24px; }

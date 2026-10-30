@@ -1,0 +1,54 @@
+<!doctype html>
+{% set locale = language|default('en') -%}
+{% set translation_map = translations|default({}) -%}
+{% macro translate(message) -%}{{ translation_map.get(message, message) }}{%- endmacro %}
+<html lang="{{ locale }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ translate("One-page research resume of Yichao Xu, PhD candidate in software security at Johns Hopkins University.") }}">
+<title>{{ translate("Yichao Xu · Research Resume") }}</title>
+<link rel="stylesheet" href="resume.css">
+<link rel="alternate" hreflang="en" href="cv.html"><link rel="alternate" hreflang="zh-Hans" href="cv-zh.html"></head>
+<body>
+<nav class="cv-nav" aria-label="{{ translate("Resume actions") }}"><a href="{{ 'index-zh.html' if locale == 'zh-Hans' else 'index.html' }}">{{ translate("← Home") }}</a><span class="language-switch" role="group" aria-label="{{ translate('Language') }}"><a href="cv.html" lang="en" hreflang="en"{% if locale == 'en' %} aria-current="page"{% endif %}>English</a><span aria-hidden="true">/</span><a href="cv-zh.html" lang="zh-Hans" hreflang="zh-Hans"{% if locale == 'zh-Hans' %} aria-current="page"{% endif %}>中文</a></span><button type="button" onclick="window.print()">{{ translate("Print / Save PDF") }}</button></nav>
+<main class="resume">
+<header class="resume-header">
+<h1>Yichao Xu</h1>
+<p class="contact">{{ translate("Baltimore, MD") }}<span class="separator">|</span>443-839-0004<span class="separator">|</span><a href="mailto:yxu166@jhu.edu">yxu166@jhu.edu</a></p>
+<p class="contact"><a href="https://github.com/samhsu-dev">github.com/samhsu-dev</a><span class="separator">|</span><a href="https://www.linkedin.com/in/yichaoxu-jhu/">linkedin.com/in/yichaoxu-jhu</a></p>
+</header>
+<section aria-labelledby="summary"><h2 id="summary">{{ translate("Summary") }}</h2>
+<p>{{ translate("Computer Science PhD candidate at Johns Hopkins University developing program analysis and fuzzing methods for software vulnerability discovery. Research also examines AI agents for security analysis and security risks in agentic systems.") }}</p>
+</section>
+<section aria-labelledby="education"><h2 id="education">{{ translate("Education") }}</h2>
+<div class="entry"><div class="entry-row"><p><strong>{{ translate("Johns Hopkins University") }}</strong> {{ translate("— PhD, Computer Science (expected Dec 2027)") }}</p><p class="date">{{ translate("Jan 2023–Present") }}</p></div></div>
+<div class="entry"><div class="entry-row"><p><strong>{{ translate("Johns Hopkins University") }}</strong> {{ translate("— MS, Security Informatics") }}</p><p class="date">{{ translate("Sep 2021–Dec 2022") }}</p></div></div>
+<div class="entry"><div class="entry-row"><p><strong>{{ translate("University College London") }}</strong> {{ translate("— MSc, Software Systems Engineering, Distinction") }}</p><p class="date">{{ translate("Sep 2019–Oct 2020") }}</p></div></div>
+</section>
+<section aria-labelledby="publications"><h2 id="publications">{{ translate("Selected Publications") }}</h2>
+<p class="publication"><strong>{{ translate("ICSE 2026 (first author).") }}</strong> <a href="https://dl.acm.org/doi/10.1145/3744916.3773195">CoBrA: Context-, Branch-sensitive Static Analysis for Detecting Taint-style Vulnerabilities in PHP Web Applications.</a></p>
+<p class="publication"><strong>{{ translate("IEEE S&P 2023 (second author).") }}</strong> <a href="https://ieeexplore.ieee.org/document/10179352">Scaling JavaScript Abstract Interpretation to Detect and Exploit Node.js Taint-style Vulnerability.</a></p>
+</section>
+<section aria-labelledby="skills"><h2 id="skills">{{ translate("Skills") }}</h2>
+<p class="skill-row"><strong>{{ translate("Program analysis:") }}</strong> {{ translate("Static analysis, taint analysis, abstract interpretation, code property graphs, fuzzing.") }}</p>
+<p class="skill-row"><strong>{{ translate("Languages:") }}</strong> Python, Kotlin, C++, JavaScript, PHP, Scala, Rust.</p>
+<p class="skill-row"><strong>{{ translate("Tools:") }}</strong> Joern, Semgrep, LibFuzzer, Docker, AWS Bedrock.</p>
+</section>
+<section aria-labelledby="projects"><h2 id="projects">{{ translate("Selected Research") }}</h2>
+<article class="entry"><div class="entry-row"><h3>{{ translate("PHP vulnerability static analyzer (CoBrA)") }}</h3><p class="date">{{ translate("May 2023–Mar 2025") }}</p></div><p class="entry-subtitle">{{ translate("First author, ICSE 2026 · Johns Hopkins University SecLab") }}</p>
+<ul><li>{{ translate("Built a PHP static analyzer that found 54 previously unknown vulnerabilities in 19 applications; 9 CVE IDs were assigned.") }}</li></ul></article>
+<article class="entry"><div class="entry-row"><h3>{{ translate("JavaScript vulnerability analysis at NPM scale (FAST)") }}</h3><p class="date">{{ translate("May 2021–Nov 2022") }}</p></div><p class="entry-subtitle">{{ translate("Second author, IEEE S&P 2023 · Johns Hopkins University SecLab") }}</p>
+<ul><li>{{ translate("Implemented JavaScript abstract interpretation and led evaluation of a Node.js analyzer that found 242 previously unknown vulnerabilities in npm packages.") }}</li></ul></article>
+</section>
+<section aria-labelledby="experience"><h2 id="experience">{{ translate("Experience") }}</h2>
+<article class="entry"><div class="entry-row"><h3>{{ translate("Core Engineer · Jay-I-break team (JHU)") }}</h3><p class="date">{{ translate("Feb 2026–Present") }}</p></div><p class="entry-subtitle">{{ translate("2026 Amazon Nova AI Challenge · Competition project") }}</p><ul><li>{{ translate("Maintained 8 agentic pipelines for software vulnerability discovery. Developed 1 black-box analysis pipeline and 2 dynamic analysis pipelines.") }}</li></ul></article>
+<article class="entry"><div class="entry-row"><h3>{{ translate("Research Assistant · Johns Hopkins University SecLab") }}</h3><p class="date">{{ translate("Sep 2021–Present") }}</p></div></article>
+<article class="entry"><div class="entry-row"><h3>{{ translate("Research Assistant Intern · China Academy of Industrial Internet") }}</h3><p class="date">{{ translate("Dec 2020–Mar 2021") }}</p></div><ul><li>{{ translate("Designed a Hyperledger Fabric framework for product traceability, with access controls for business-sensitive records.") }}</li></ul></article>
+</section>
+<section aria-labelledby="software"><h2 id="software">{{ translate("Open-source Software") }}</h2>
+<p class="software-row"><strong>{{ translate("Joern (Scala).") }}</strong> {{ translate("Contributed PHP version-check fixes, five security-query classes and regression tests.") }} <a href="https://github.com/joernio/joern/pull/5327">{{ translate("PR #5327 merged.") }}</a></p>
+<p class="software-row"><strong><a href="https://github.com/samhsu-dev/harvest-claude">{{ translate("Harvest Claude (Rust).") }}</a></strong> {{ translate("Built a terminal dashboard that visualizes Claude Code sessions as animated farm characters.") }}</p>
+</section>
+</main>
+</body></html>

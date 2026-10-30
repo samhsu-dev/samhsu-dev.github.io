@@ -1,26 +1,27 @@
 (() => {
+  const translate = window.translateSiteText;
   const phases = [
     {
-      heading: 'Record what the function cannot yet know',
-      graph: 'Phase I · Dependencies',
-      input: 'The parsed PHP program, analyzed one function at a time.',
-      method: 'Use intra-procedural abstract interpretation to record values and their dependencies. Keep parameters and expressions that need calling context as stretch nodes: values whose resolution is deferred. Record both the producing operation and its operands.',
-      output: 'An abstract domain graph (ADG) that preserves the information needed to revisit unresolved expressions.',
-      example: 'Inside controller, $action is unknown. CoBrA records that the target depends on $action and the suffix "_controller", rather than guessing a function.'
+      heading: translate('Record what the function cannot yet know'),
+      graph: translate('Phase I · Dependencies'),
+      input: translate('The parsed PHP program, analyzed one function at a time.'),
+      method: translate('Use intra-procedural abstract interpretation to record values and their dependencies. Keep parameters and expressions that need calling context as stretch nodes: values whose resolution is deferred. Record both the producing operation and its operands.'),
+      output: translate('An abstract domain graph (ADG) that preserves the information needed to revisit unresolved expressions.'),
+      example: translate('Inside controller, $action is unknown. CoBrA records that the target depends on $action and the suffix "_controller", rather than guessing a function.')
     },
     {
-      heading: 'Resolve dynamic calls and collect candidate paths',
-      graph: 'Phase II · Candidate call paths',
-      input: 'The dependency graph from Phase I and the calling contexts.',
-      method: 'Use lightweight inter-procedural interpretation to apply argument values and resolve dynamic calls. Context labels keep feed and admin calls distinct. Search for candidate source-to-sink call paths; these paths still require the more detailed checks in Phase III.',
-      output: 'Candidate paths containing a source, a sink and a sequence of call sites and callees.'
+      heading: translate('Resolve dynamic calls and collect candidate paths'),
+      graph: translate('Phase II · Candidate call paths'),
+      input: translate('The dependency graph from Phase I and the calling contexts.'),
+      method: translate('Use lightweight inter-procedural interpretation to apply argument values and resolve dynamic calls. Context labels keep feed and admin calls distinct. Search for candidate source-to-sink call paths; these paths still require the more detailed checks in Phase III.'),
+      output: translate('Candidate paths containing a source, a sink and a sequence of call sites and callees.')
     },
     {
-      heading: 'Refine the branches, then check the input flow',
-      graph: 'Phase III · Branch refinement and taint flow',
-      input: 'The candidate paths from Phase II.',
-      method: 'Use heavyweight inter-procedural abstract interpretation with a fresh scope for each call. Evaluate statements and branch conditions, follow both branches when a condition remains unknown, and propagate taint through operations and sanitizers. Extract source-to-sink data-flow evidence from the resulting graph.',
-      output: 'Data-flow evidence for reported vulnerabilities; candidate paths without the required flow are excluded.'
+      heading: translate('Refine the branches, then check the input flow'),
+      graph: translate('Phase III · Branch refinement and taint flow'),
+      input: translate('The candidate paths from Phase II.'),
+      method: translate('Use heavyweight inter-procedural abstract interpretation with a fresh scope for each call. Evaluate statements and branch conditions, follow both branches when a condition remains unknown, and propagate taint through operations and sanitizers. Extract source-to-sink data-flow evidence from the resulting graph.'),
+      output: translate('Data-flow evidence for reported vulnerabilities; candidate paths without the required flow are excluded.')
     }
   ];
   const contexts = ['feed', 'admin'];
@@ -96,15 +97,15 @@
 
   function resultText() {
     if (phase === 0) return phases[0].example;
-    if (phase === 2 && context === 'admin') return 'The admin call has no candidate path to this SQL sink, so there is no such path to check in Phase III.';
-    if (phase === 2) return 'get_engine(0) selects MySqlEngine. The OtherSqlEngine candidate is excluded; on the remaining path, request data enters the SQL string and reaches query.';
-    if (context === 'feed') return '"feed" resolves the dynamic target to feed_controller. At this stage, both engine paths are candidates; Phase III will check which branch applies and whether input reaches the SQL sink.';
-    return '"admin" resolves the target to admin_controller. Keeping this context distinct avoids adding the feed call’s SQL paths to the admin call.';
+    if (phase === 2 && context === 'admin') return translate('The admin call has no candidate path to this SQL sink, so there is no such path to check in Phase III.');
+    if (phase === 2) return translate('get_engine(0) selects MySqlEngine. The OtherSqlEngine candidate is excluded; on the remaining path, request data enters the SQL string and reaches query.');
+    if (context === 'feed') return translate('"feed" resolves the dynamic target to feed_controller. At this stage, both engine paths are candidates; Phase III will check which branch applies and whether input reaches the SQL sink.');
+    return translate('"admin" resolves the target to admin_controller. Keeping this context distinct avoids adding the feed call’s SQL paths to the admin call.');
   }
 
   function targetText() {
-    if (phase === 0) return '$action . "_controller" → unresolved target';
-    if (phase === 2) return context === 'feed' ? '$engine_id = 0 → MySqlEngine' : 'No candidate SQL path';
+    if (phase === 0) return translate('$action . "_controller" → unresolved target');
+    if (phase === 2) return context === 'feed' ? '$engine_id = 0 → MySqlEngine' : translate('No candidate SQL path');
     return `$action = "${context}" → ${context}_controller`;
   }
 
@@ -118,7 +119,7 @@
     document.getElementById('phase-heading').textContent = phases[phase].heading;
     for (const field of ['input', 'method', 'output']) document.getElementById(`phase-${field}`).textContent = phases[phase][field];
     outcome.textContent = resultText();
-    nextButton.textContent = phase === phases.length - 1 ? 'Start again ↻' : `Next: Phase ${phase === 0 ? 'II' : 'III'} →`;
+    nextButton.textContent = phase === phases.length - 1 ? translate('Start again ↻') : translate('Next: Phase {phase} →').replace('{phase}', phase === 0 ? 'II' : 'III');
   }
 
   function selectContext(event) {

@@ -1,4 +1,5 @@
 window.createCobraGraph = function createCobraGraph(container) {
+  const translate = window.translateSiteText;
   function elements(model) {
     const nodes = model.nodes.map(([id, label, x, y, classes = '']) => ({ data: { id, label }, position: { x, y }, classes }));
     const edges = model.edges.map(([source, target, classes = '']) => ({ data: { id: `${source}-${target}`, source, target }, classes }));
@@ -7,10 +8,10 @@ window.createCobraGraph = function createCobraGraph(container) {
 
   function dependencies() {
     return elements({ nodes: [
-      ['action', '$action: unknown', 95, 28, 'unresolved'],
+      ['action', translate('$action: unknown'), 95, 28, 'unresolved'],
       ['suffix', '"_controller"', 300, 28],
-      ['concat', 'String concatenation', 200, 112],
-      ['stretch', 'Unresolved result', 200, 202, 'unresolved'],
+      ['concat', translate('String concatenation'), 200, 112],
+      ['stretch', translate('Unresolved result'), 200, 202, 'unresolved'],
       ['call', '$target($engine, $data)', 200, 286]
     ], edges: [['action', 'concat'], ['suffix', 'concat'], ['concat', 'stretch'], ['stretch', 'call', 'unresolved']] });
   }
@@ -19,26 +20,26 @@ window.createCobraGraph = function createCobraGraph(container) {
     if (context === 'admin') return elements({ nodes: [
       ['entry', 'controller("admin", 0, …)', 220, 38, 'on-path'],
       ['admin', 'admin_controller', 220, 132, 'on-path'],
-      ['none', 'No candidate path\nto the shown SQL sink', 220, 250, 'message']
+      ['none', translate('No candidate path\nto the shown SQL sink'), 220, 250, 'message']
     ], edges: [['entry', 'admin', 'on-path']] });
     return elements({ nodes: [
       ['entry', 'controller("feed", 0, …)', 220, 24, 'on-path'],
       ['feed', 'feed_controller', 220, 106, 'on-path'],
       ['mysql', 'MySqlEngine::\ninsert_feed', 115, 198, 'on-path'],
       ['other', 'OtherSqlEngine::\ninsert_feed', 325, 198, 'on-path'],
-      ['sql', 'SQL sink', 115, 292, 'on-path'],
-      ['candidate', 'Other sink candidate\n(body omitted)', 325, 292, 'on-path']
+      ['sql', translate('SQL sink'), 115, 292, 'on-path'],
+      ['candidate', translate('Other sink candidate\n(body omitted)'), 325, 292, 'on-path']
     ], edges: [['entry', 'feed', 'on-path'], ['feed', 'mysql', 'on-path'], ['feed', 'other', 'on-path'], ['mysql', 'sql', 'on-path'], ['other', 'candidate', 'on-path']] });
   }
 
   function dataFlow(context) {
-    if (context === 'admin') return elements({ nodes: [['none', 'No candidate path\nto this SQL sink', 220, 160, 'message']], edges: [] });
+    if (context === 'admin') return elements({ nodes: [['none', translate('No candidate path\nto this SQL sink'), 220, 160, 'message']], edges: [] });
     return elements({ nodes: [
       ['input', '$_GET["data"]', 220, 24, 'tainted'],
       ['feed', 'feed_controller: $data', 220, 94, 'tainted'],
       ['mysql', 'MySqlEngine: $value', 115, 168, 'tainted'],
-      ['other', 'OtherSqlEngine\nexcluded: engine_id = 0', 325, 168, 'excluded'],
-      ['string', 'SQL string', 115, 240, 'tainted'],
+      ['other', translate('OtherSqlEngine\nexcluded: engine_id = 0'), 325, 168, 'excluded'],
+      ['string', translate('SQL string'), 115, 240, 'tainted'],
       ['sink', 'query(…)', 115, 312, 'tainted']
     ], edges: [['input', 'feed', 'tainted'], ['feed', 'mysql', 'tainted'], ['feed', 'other', 'excluded'], ['mysql', 'string', 'tainted'], ['string', 'sink', 'tainted']] });
   }

@@ -63,8 +63,10 @@
 
 ## Links
 
-- Website: https://samhsu-dev.github.io/
-- CV reading and print page: ../cv.html
+- Website (English): https://samhsu-dev.github.io/
+- Website (Chinese): https://samhsu-dev.github.io/index-zh.html
+- CV reading and print page (English): ../cv.html
+- CV reading and print page (Chinese): ../cv-zh.html
 
 - Google Scholar: https://scholar.google.com/citations?user=I8e-vacAAAAJ&hl=en
 - GitHub: https://github.com/samhsu-dev

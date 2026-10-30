@@ -52,14 +52,17 @@ jobs:
       - name: Report retained Scholar snapshot
         if: steps.scholar.outcome == 'failure'
         run: echo "::warning::Scholar could not be refreshed; the homepage retains its previous citation data."
-      - name: Render homepage with Jinja
+      - name: Render English and Chinese pages with Jinja
         run: |
           jq '{data: .}' assets/metrics/scholar.json | jinja2 templates/index.html.j2 /dev/stdin --format=json --strict --autoescape --outfile=index.html
+          jq --slurpfile translations locales/zh-Hans.json '{data: ., language: "zh-Hans", translations: $translations[0]}' assets/metrics/scholar.json | jinja2 templates/index.html.j2 /dev/stdin --format=json --strict --autoescape --outfile=index-zh.html
+          echo '{}' | jinja2 templates/cv.html.j2 /dev/stdin --format=json --strict --autoescape --outfile=cv.html
+          jq '{language: "zh-Hans", translations: .}' locales/zh-Hans.json | jinja2 templates/cv.html.j2 /dev/stdin --format=json --strict --autoescape --outfile=cv-zh.html
       - uses: actions/configure-pages@v5
       - name: Prepare public files
         run: |
           mkdir _site
-          cp index.html cv.html home.css cobra-demo.css cobra-demo.js cobra-graph.js llms.txt _site/
+          cp index.html index-zh.html cv.html cv-zh.html home.css resume.css site_locale.js cobra-demo.css cobra-demo.js cobra-graph.js llms.txt _site/
           cp -R assets llms vendor _site/
       - uses: actions/upload-pages-artifact@v4
         with:
