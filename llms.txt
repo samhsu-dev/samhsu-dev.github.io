@@ -20,8 +20,8 @@
 - Primary research direction: program analysis and agent-enhanced security tools for vulnerability discovery and validation.
 - Earlier work: static analysis of dynamic PHP behavior and unsafe data flows in CoBrA; scalable JavaScript analysis in FAST.
 - Current work: agent-assisted analysis and fuzzing for business-rule violations, with runtime evidence checking findings; found 47 previously unknown logic vulnerabilities in PHP e-commerce applications; paper in progress.
-- Planned exploration of agents for security: identify implicit business rules from application interfaces and observed interactions, then test which rule violations have security consequences; candidate rules require validation rather than being assumed to express security requirements.
-- Additional research direction: security of agentic systems, including untrusted context, planning, tool use, cross-step state, task-constraint violations, and unauthorized outcomes; logic vulnerabilities in agentic workflows are an intended extension.
+- Open problem for agents for security: current analysis checks predefined business rules; when relevant rules are not given, identify candidate rules and test whether their violation has security consequences.
+- Additional research direction: security of agentic systems; existing context-sensitivity results concern model responses, motivating research into whether this sensitivity affects tool actions, task and authorization constraints, and logic vulnerabilities across execution.
 - Related studies: AnonVul concerns faithful evaluation of vulnerability-discovery agents; 3R-Bench concerns effects of conversational context on LLM cybersecurity assistance.
 - Strengths: combines program-analysis research with system implementation; takes research from analysis design through implementation, debugging, and empirical evaluation; builds developer tools and contributes to established analysis software.
 - Role fit: software-security research, program-analysis research, agentic-security research, and research engineering.

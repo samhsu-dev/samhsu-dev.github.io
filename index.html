@@ -26,20 +26,18 @@
   <h2 id="research-title">Research</h2>
   <div class="research-direction">
     <h3><img class="direction-icon" src="assets/icons/diagram-3.svg" width="16" height="16" alt="" aria-hidden="true">Program analysis</h3>
-    <p>I study how automated analysis can uncover vulnerabilities hidden in complex software behavior.</p>
     <ul class="research-progress">
-      <li><strong>Earlier:</strong> Addressed blind spots in analyzing dynamic language behavior, uncovering previously unknown vulnerabilities: 54 in 19 real-world PHP applications (CoBrA) and 242 in npm packages (FAST).</li>
-      <li><strong>Now:</strong> Bring application context into security analysis with agents to identify business-rule violations, such as underpaid orders. This work has found 47 previously unknown logic vulnerabilities in PHP e-commerce applications.</li>
-      <li><strong>Next:</strong> Explore how to identify implicit business rules from application interfaces and interactions, and verify which violations constitute security vulnerabilities.</li>
+      <li><strong>Earlier:</strong> Improved analysis of unsafe data flows in dynamic PHP and JavaScript, uncovering 54 previously unknown vulnerabilities in 19 PHP applications (CoBrA) and 242 in npm packages (FAST).</li>
+      <li><strong>Now:</strong> Beyond unsafe data flows, logic vulnerabilities depend on an application&#39;s business rules. I now combine program analysis with agent assistance to check predefined rules; this work has found 47 previously unknown logic vulnerabilities in PHP e-commerce applications.</li>
+      <li><strong>Next:</strong> How can we discover logic vulnerabilities when the relevant business rules are not given? I want to identify candidate rules and test whether violating them has security consequences.</li>
     </ul>
     <p class="research-links"><a href="#cobra">CoBrA · ICSE 2026</a><a href="#fast">FAST · IEEE S&amp;P 2023</a><a href="#discovery">AnonVul · Preprint 2026</a></p>
   </div>
   <div class="research-direction">
     <h3><img class="direction-icon" src="assets/icons/robot.svg" width="16" height="16" alt="" aria-hidden="true">Agentic security</h3>
-    <p>I also study security risks in AI systems that plan tasks and use tools.</p>
     <ul class="research-progress">
-      <li><strong>Related work:</strong> Showed that prior dialogue changes assistance on identical cybersecurity requests, highlighting the need to evaluate safety boundaries across conversational contexts.</li>
-      <li><strong>Exploring:</strong> How can context and multi-step actions cause agents to act beyond their assigned task? How can such logic vulnerabilities be detected and prevented?</li>
+      <li><strong>Related work:</strong> Showed that prior dialogue changes assistance on identical cybersecurity requests.</li>
+      <li><strong>Exploring:</strong> Does this context sensitivity carry into agents&#39; actions? I want to study how task and authorization constraints hold across tool use, and where logic vulnerabilities arise.</li>
     </ul>
     <p class="research-links"><a href="#context">3R-Bench · Preprint 2026</a></p>
   </div>

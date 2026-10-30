@@ -219,12 +219,9 @@
   "Next:": "下一步：",
   "Related work:": "相关工作：",
   "Exploring:": "正在探索：",
-  "I also study security risks in AI systems that plan tasks and use tools.": "我也研究能够规划任务、调用工具的 AI 系统自身的安全风险。",
-  "How can such logic vulnerabilities be detected and prevented?": "如何发现和预防这类逻辑漏洞？",
-  "How can context and multi-step actions cause agents to act beyond their assigned task?": "上下文与多步操作可能如何导致智能体偏离既定任务或超出授权范围？",
-  "I study how automated analysis can uncover vulnerabilities hidden in complex software behavior.": "我研究如何通过自动化分析，发现复杂软件行为中隐藏的安全缺陷。",
-  "Addressed blind spots in analyzing dynamic language behavior, uncovering previously unknown vulnerabilities: 54 in 19 real-world PHP applications (CoBrA) and 242 in npm packages (FAST).": "针对动态语言行为造成的分析盲区，发现此前未知的漏洞：CoBrA 在 19 个真实 PHP 应用中发现 54 个，FAST 在 npm 软件包中发现 242 个。",
-  "Showed that prior dialogue changes assistance on identical cybersecurity requests, highlighting the need to evaluate safety boundaries across conversational contexts.": "发现相同安全请求会因先前对话而得到不同程度的协助，说明安全边界的评估需要考虑对话上下文。",
-  "Bring application context into security analysis with agents to identify business-rule violations, such as underpaid orders. This work has found 47 previously unknown logic vulnerabilities in PHP e-commerce applications.": "利用智能体将应用上下文引入安全分析，识别支付不足等业务规则违规；已在 PHP 电商应用中发现 47 个此前未知的逻辑漏洞。",
-  "Explore how to identify implicit business rules from application interfaces and interactions, and verify which violations constitute security vulnerabilities.": "探索如何从应用界面与交互中识别隐含的业务规则，并验证哪些违规行为会构成安全漏洞。"
+  "How can we discover logic vulnerabilities when the relevant business rules are not given? I want to identify candidate rules and test whether violating them has security consequences.": "当相关业务规则没有预先给定时，如何发现逻辑漏洞？下一步研究如何识别候选规则，并检验违规是否造成实际安全后果。",
+  "Showed that prior dialogue changes assistance on identical cybersecurity requests.": "发现相同安全请求会因先前对话而得到不同程度的协助。",
+  "Does this context sensitivity carry into agents' actions? I want to study how task and authorization constraints hold across tool use, and where logic vulnerabilities arise.": "这种上下文敏感性会如何影响智能体的实际操作？研究任务与授权约束如何在工具调用中持续成立，以及哪些失效会导致逻辑漏洞。",
+  "Improved analysis of unsafe data flows in dynamic PHP and JavaScript, uncovering 54 previously unknown vulnerabilities in 19 PHP applications (CoBrA) and 242 in npm packages (FAST).": "改进了动态 PHP 与 JavaScript 中不安全数据流的分析：CoBrA 在 19 个 PHP 应用中发现 54 个此前未知的漏洞，FAST 在 npm 软件包中发现 242 个。",
+  "Beyond unsafe data flows, logic vulnerabilities depend on an application's business rules. I now combine program analysis with agent assistance to check predefined rules; this work has found 47 previously unknown logic vulnerabilities in PHP e-commerce applications.": "不安全的数据流只是问题的一部分，发现逻辑漏洞还需要理解应用应遵守的业务规则。结合程序分析与智能体辅助检验预设规则，已在 PHP 电商应用中发现 47 个此前未知的逻辑漏洞。"
 }
