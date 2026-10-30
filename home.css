@@ -1,4 +1,4 @@
-:root { --blue:#002d72; --ink:#28313a; --muted:#62707c; --line:#e0e5e9; --serif:"Source Serif 4",Charter,Georgia,serif; --sans:"Work Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; --mono:ui-monospace,SFMono-Regular,Consolas,monospace; --body-size:15px; --title-size:15px; --section-size:20px; --meta-size:12px; --section-gap:40px; --row-space:16px; --entry-gap:18px; --label-width:140px; }
+:root { --blue:#002d72; --ink:#28313a; --muted:#62707c; --line:#e0e5e9; --serif:"Source Serif 4",Charter,Georgia,serif; --sans:"Work Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; --mono:ui-monospace,SFMono-Regular,Consolas,monospace; --body-size:15px; --title-size:15px; --section-size:20px; --meta-size:12px; --section-gap:40px; --row-space:16px; --entry-gap:18px; --label-width:140px; --anchor-offset:90px; }
 * { box-sizing:border-box; }
 body { margin:0; background:white; color:var(--ink); font:var(--body-size)/1.6 var(--sans); border-top:3px solid var(--blue); }
 .site-wrap { width:min(860px,calc(100% - 48px)); margin:auto; }
@@ -20,19 +20,23 @@ h3 { font:600 var(--title-size)/1.5 var(--sans); color:#263d54; }
 .identity-person { display:grid; grid-template-columns:100px minmax(0,1fr); align-content:start; column-gap:24px; }
 .portrait { grid-row:1 / 3; display:block; width:100px; height:124px; object-fit:cover; border-radius:5px; }
 .identity-copy { min-width:0; padding-right:150px; }
-.identity-directions { margin-top:20px; padding-top:17px; border-top:1px solid var(--line); line-height:1.65; }
-.identity-directions p { display:grid; grid-template-columns:16px minmax(0,1fr); gap:8px; align-items:start; }
-.direction-icon { display:block; width:16px; height:16px; margin-top:4px; }
-.identity-directions p + p { margin-top:8px; }
-.identity-directions strong { color:#263d54; font-weight:600; }
+.research-direction { line-height:1.65; }
+.research-direction + .research-direction { margin-top:24px; }
+.research-direction h3 { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.direction-icon { width:16px; height:16px; flex:none; }
+.research-progress { margin:8px 0 0; padding-left:20px; }
+.research-progress li + li { margin-top:5px; }
+.research-progress strong { color:#263d54; font-weight:600; }
+.research-links { display:flex; flex-wrap:wrap; gap:4px 16px; margin-top:9px; color:var(--muted); font-size:13px; }
 .position { font-size:14px; line-height:1.55; color:var(--muted); margin-top:9px; }
 .position-detail { font-size:12px; }
 .contacts { grid-column:2; display:flex; flex-wrap:wrap; gap:8px 17px; font-size:13px; margin-top:13px; }
 .contacts a { display:inline-flex; align-items:center; gap:6px; white-space:nowrap; }
 .scholar-counts { font-size:12px; color:var(--muted); font-weight:400; }
 .link-icon { width:14px; height:14px; flex:none; }
-main { scroll-margin-top:90px; }
-main > section { padding-top:var(--section-gap); scroll-margin-top:72px; }
+main { scroll-margin-top:var(--anchor-offset); }
+main > section { padding-top:var(--section-gap); scroll-margin-top:var(--anchor-offset); }
+.publication { scroll-margin-top:var(--anchor-offset); }
 .publication,.software-entry,.background-entry { border-bottom:1px solid var(--line); }
 .work-summary { display:grid; grid-template-columns:var(--label-width) minmax(0,1fr) 14px; gap:var(--entry-gap); align-items:baseline; padding:var(--row-space) 0; cursor:pointer; list-style:none; }
 .work-summary::-webkit-details-marker { display:none; }
@@ -80,18 +84,15 @@ main > section { padding-top:var(--section-gap); scroll-margin-top:72px; }
 .entry-content > .entry-meta + p { margin-top:7px; }
 footer { display:flex; gap:22px; padding:22px 0 30px; border-top:1px solid var(--line); margin-top:30px; font-size:12px; }
 @media(max-width:780px) {
- :root { --section-gap:32px; --row-space:14px; }
+ :root { --section-gap:32px; --row-space:14px; --anchor-offset:148px; }
  .site-wrap { width:calc(100% - 32px); }
  .site-header { gap:14px; flex-wrap:wrap; padding:18px 0; }
  .site-header nav { gap:18px; }
- main { scroll-margin-top:148px; }
- main > section { scroll-margin-top:130px; }
  .identity { padding:23px 18px; background-image:none; }
  .identity-person { grid-template-columns:72px minmax(0,1fr); column-gap:17px; background-image:none; }
  .identity-copy { padding-right:0; }
  .portrait { grid-row:1; width:72px; height:90px; }
  .contacts { grid-column:1 / -1; margin-top:18px; }
- .identity-directions { padding-top:16px; }
  h1 { font-size:29px; }
 }
 @media(max-width:620px) {

@@ -62,7 +62,7 @@ jobs:
       - name: Prepare public files
         run: |
           mkdir _site
-          cp index.html index-zh.html cv.html cv-zh.html home.css resume.css site_locale.js cobra-demo.css cobra-demo.js cobra-graph.js llms.txt _site/
+          cp index.html index-zh.html cv.html cv-zh.html home.css resume.css site_locale.js publication_links.js cobra-demo.css cobra-demo.js cobra-graph.js llms.txt _site/
           cp -R assets llms vendor _site/
       - uses: actions/upload-pages-artifact@v4
         with:

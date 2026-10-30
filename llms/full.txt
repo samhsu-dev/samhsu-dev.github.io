@@ -17,8 +17,12 @@
 
 ## Research and capabilities
 
-- Program analysis: discovering injection vulnerabilities and business-logic flaws in web applications and software packages, including cases where dynamic language behavior or application state obstructs automated analysis.
-- Agentic security: agents that assist static and dynamic security analysis; security risks in agentic systems; evaluation of vulnerability-discovery agents and LLM cybersecurity assistance.
+- Primary research direction: program analysis and agent-enhanced security tools for vulnerability discovery and validation.
+- Earlier work: static analysis of dynamic PHP behavior and unsafe data flows in CoBrA; scalable JavaScript analysis in FAST.
+- Current work: static analysis and fuzzing combined with agent assistance to map business rules to code, with runtime instrumentation checking violations; business-logic vulnerability discovery is a research setting, and the paper is in progress.
+- Planned exploration of agents for security: integrate agents with existing analysis and testing tools across languages and applications, including settings without backend source access; identify candidate constraints, plan tests, and validate findings using execution evidence.
+- Additional research direction: security of agentic systems, including untrusted context, planning, tool use, cross-step state, task-constraint violations, and unauthorized outcomes; logic vulnerabilities in agentic workflows are an intended extension.
+- Related studies: AnonVul concerns faithful evaluation of vulnerability-discovery agents; 3R-Bench concerns effects of conversational context on LLM cybersecurity assistance.
 - Strengths: combines program-analysis research with system implementation; takes research from analysis design through implementation, debugging, and empirical evaluation; builds developer tools and contributes to established analysis software.
 - Role fit: software-security research, program-analysis research, agentic-security research, and research engineering.
 - Languages used across research and software contributions: Kotlin, Python, JavaScript, PHP, C++, Rust, Scala.
@@ -27,6 +31,7 @@
 
 ### CoBrA
 
+- Research direction: Program analysis: dynamic PHP analysis.
 - Title: CoBrA: Context-, Branch-sensitive Static Analysis for Detecting Taint-style Vulnerabilities in PHP Web Applications.
 - Venue: ICSE 2026; status: published.
 - Authors: Yichao Xu, Mingqing Kang, Neil Thimmaiah, Rigel Gjomemo, V. N. Venkatakrishnan, Yinzhi Cao.
@@ -41,6 +46,7 @@
 
 ### FAST
 
+- Research direction: Program analysis: scalable JavaScript analysis.
 - Title: Scaling JavaScript Abstract Interpretation to Detect and Exploit Node.js Taint-style Vulnerability.
 - Venue: IEEE Symposium on Security and Privacy 2023; status: published.
 - Authors: Mingqing Kang, Yichao Xu, Song Li, Rigel Gjomemo, Jianwei Hou, V. N. Venkatakrishnan, Yinzhi Cao.
@@ -54,6 +60,7 @@
 
 ### AnonVul
 
+- Research direction: Agent-enhanced security tools: evaluating vulnerability-discovery agents.
 - Title: Discovery or Memorization? A Faithful Benchmark for Real-World Business-Logic Vulnerability Discovery.
 - Status: arXiv preprint, 2026.
 - Authors: Rui Yang, Yichao Xu, Zhuohao Zhang, Jiahao Ji, Chaowei Xiao, Yinzhi Cao, Ziyang Li.
@@ -64,6 +71,7 @@
 
 ### 3R-Bench
 
+- Research direction: Agentic security: context and cybersecurity assistance.
 - Title: Same Request, Different Boundary: Evaluating Cybersecurity Assistance across Conversational Contexts.
 - Status: arXiv preprint, 2026.
 - Authors: Rui Yang, Yang Hong, Yichao Xu, Zhengyu Liu, Yinzhi Cao, Ziyang Li.
