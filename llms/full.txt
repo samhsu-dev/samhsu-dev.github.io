@@ -19,7 +19,7 @@
 
 - Primary research direction: program analysis and agent-enhanced security tools for vulnerability discovery and validation.
 - Earlier work: static analysis of dynamic PHP behavior and unsafe data flows in CoBrA; scalable JavaScript analysis in FAST.
-- Current work: static analysis and fuzzing combined with agent assistance to map business rules to code, with runtime instrumentation checking violations; business-logic vulnerability discovery is a research setting, and the paper is in progress.
+- Current work: agent-assisted analysis and fuzzing for business-rule violations, with runtime evidence checking findings; found 47 previously unknown logic vulnerabilities in PHP e-commerce applications; paper in progress.
 - Planned exploration of agents for security: integrate agents with existing analysis and testing tools across languages and applications, including settings without backend source access; identify candidate constraints, plan tests, and validate findings using execution evidence.
 - Additional research direction: security of agentic systems, including untrusted context, planning, tool use, cross-step state, task-constraint violations, and unauthorized outcomes; logic vulnerabilities in agentic workflows are an intended extension.
 - Related studies: AnonVul concerns faithful evaluation of vulnerability-discovery agents; 3R-Bench concerns effects of conversational context on LLM cybersecurity assistance.
