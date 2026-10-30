@@ -226,5 +226,5 @@
   "Addressed blind spots in analyzing dynamic language behavior, uncovering previously unknown vulnerabilities: 54 in 19 real-world PHP applications (CoBrA) and 242 in npm packages (FAST).": "针对动态语言行为造成的分析盲区，发现此前未知的漏洞：CoBrA 在 19 个真实 PHP 应用中发现 54 个，FAST 在 npm 软件包中发现 242 个。",
   "Showed that prior dialogue changes assistance on identical cybersecurity requests, highlighting the need to evaluate safety boundaries across conversational contexts.": "发现相同安全请求会因先前对话而得到不同程度的协助，说明安全边界的评估需要考虑对话上下文。",
   "Bring application context into security analysis with agents to identify business-rule violations, such as underpaid orders. This work has found 47 previously unknown logic vulnerabilities in PHP e-commerce applications.": "利用智能体将应用上下文引入安全分析，识别支付不足等业务规则违规；已在 PHP 电商应用中发现 47 个此前未知的逻辑漏洞。",
-  "Explore how to identify implicit business rules from application interfaces and interactions, and verify which violations constitute security vulnerabilities.": "探索如何从应用界面与交互中识别隐含的业务规则，并验证哪些规则违规会构成安全漏洞。"
+  "Explore how to identify implicit business rules from application interfaces and interactions, and verify which violations constitute security vulnerabilities.": "探索如何从应用界面与交互中识别隐含的业务规则，并验证哪些违规行为会构成安全漏洞。"
 }
