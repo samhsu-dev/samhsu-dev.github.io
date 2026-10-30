@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="One-page research resume of Yichao Xu, PhD candidate in software security at Johns Hopkins University.">
+<title>Yichao Xu · Research Resume</title>
+<style>
+@font-face{font-family:"Latin Modern Roman";src:url("assets/fonts/latin-modern/lmroman10-regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Latin Modern Roman";src:url("assets/fonts/latin-modern/lmroman10-bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Latin Modern Roman";src:url("assets/fonts/latin-modern/lmroman10-italic.otf") format("opentype");font-weight:400;font-style:italic;font-display:swap}
+*{box-sizing:border-box}
+body{margin:0;background:#f5f7fa;color:#111;font:11pt/13pt "Latin Modern Roman","Times New Roman",serif}
+a{color:inherit;text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:2px}
+a:focus-visible,button:focus-visible{outline:2px solid #002d72;outline-offset:3px}
+.cv-nav{max-width:8.5in;margin:20px auto 0;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;font:13px/1.4 Arial,sans-serif;color:#002d72}
+.cv-nav button{font:inherit;color:inherit;background:white;border:1px solid #c9d2dc;border-radius:3px;padding:6px 12px;cursor:pointer}
+.resume{max-width:8.5in;margin:16px auto 28px;padding:0.6in;background:white;box-shadow:0 1px 8px #162c4310}
+h1,h2,h3,p,ul{margin:0}
+.resume-header{text-align:center;margin-bottom:9pt}
+h1{font-size:15pt;line-height:17pt;font-weight:700;margin-bottom:3pt}
+.contact{font-size:10.5pt;line-height:13pt}.contact+p{margin-top:2pt}
+.contact .separator{padding:0 5pt}
+h2{font-size:12pt;line-height:14pt;font-weight:400;font-variant:small-caps;border-bottom:0.5pt solid #111;padding-bottom:1pt;margin:7pt 0 3pt;break-after:avoid}
+h3{font-size:11pt;line-height:13pt;font-weight:700}
+.entry{margin-top:3pt;break-inside:avoid}.entry:first-of-type{margin-top:0}
+.entry-row{display:flex;justify-content:space-between;align-items:baseline;gap:10pt}.entry-row>p:first-child,.entry-row>h3{min-width:0}
+.date{white-space:nowrap;flex:none}.entry-subtitle{font-style:italic}
+ul{padding-left:12pt;list-style-type:disc;margin-top:2pt}li+li{margin-top:1pt}
+.publication{margin-top:3pt;break-inside:avoid}.publication:first-of-type{margin-top:0}
+.skill-row+.skill-row{margin-top:1pt}.software-row+.software-row{margin-top:3pt}
+@page{size:letter;margin:0.6in}
+@media print{body{background:white}.cv-nav{display:none}.resume{max-width:none;margin:0;padding:0;box-shadow:none}a{text-decoration:none}section{break-inside:auto}}
+@media screen and (max-width:700px){.resume{margin:14px 12px 20px;padding:22px}.entry-row{display:block}.date{margin-top:1pt}.contact .separator{padding:0 3pt}}
+</style>
+</head>
+<body>
+<nav class="cv-nav" aria-label="Resume actions"><a href="index.html">← Home</a><button type="button" onclick="window.print()">Print / Save PDF</button></nav>
+<main class="resume">
+<header class="resume-header">
+<h1>Yichao Xu</h1>
+<p class="contact">Baltimore, MD<span class="separator">|</span>443-839-0004<span class="separator">|</span><a href="mailto:yxu166@jhu.edu">yxu166@jhu.edu</a></p>
+<p class="contact"><a href="https://github.com/samhsu-dev">github.com/samhsu-dev</a><span class="separator">|</span><a href="https://www.linkedin.com/in/yichaoxu-jhu/">linkedin.com/in/yichaoxu-jhu</a></p>
+</header>
+<section aria-labelledby="summary"><h2 id="summary">Summary</h2>
+<p>Computer Science PhD candidate at Johns Hopkins University developing program analysis and fuzzing methods for software vulnerability discovery. Research also examines AI agents for security analysis and security risks in agentic systems.</p>
+</section>
+<section aria-labelledby="education"><h2 id="education">Education</h2>
+<div class="entry"><div class="entry-row"><p><strong>Johns Hopkins University</strong> — PhD, Computer Science (expected Dec 2027)</p><p class="date">Jan 2023–Present</p></div></div>
+<div class="entry"><div class="entry-row"><p><strong>Johns Hopkins University</strong> — MS, Security Informatics</p><p class="date">Sep 2021–Dec 2022</p></div></div>
+<div class="entry"><div class="entry-row"><p><strong>University College London</strong> — MSc, Software Systems Engineering, Distinction</p><p class="date">Sep 2019–Oct 2020</p></div></div>
+</section>
+<section aria-labelledby="publications"><h2 id="publications">Selected Publications</h2>
+<p class="publication"><strong>ICSE 2026 (first author).</strong> <a href="https://dl.acm.org/doi/10.1145/3744916.3773195">CoBrA: Context-, Branch-sensitive Static Analysis for Detecting Taint-style Vulnerabilities in PHP Web Applications.</a></p>
+<p class="publication"><strong>IEEE S&amp;P 2023 (second author).</strong> <a href="https://ieeexplore.ieee.org/document/10179352">Scaling JavaScript Abstract Interpretation to Detect and Exploit Node.js Taint-style Vulnerability.</a></p>
+</section>
+<section aria-labelledby="skills"><h2 id="skills">Skills</h2>
+<p class="skill-row"><strong>Program analysis:</strong> Static analysis, taint analysis, abstract interpretation, code property graphs, fuzzing.</p>
+<p class="skill-row"><strong>Languages:</strong> Python, Kotlin, C++, JavaScript, PHP, Scala, Rust.</p>
+<p class="skill-row"><strong>Tools:</strong> Joern, Semgrep, LibFuzzer, Docker, AWS Bedrock.</p>
+</section>
+<section aria-labelledby="projects"><h2 id="projects">Selected Research</h2>
+<article class="entry"><div class="entry-row"><h3>PHP vulnerability static analyzer (CoBrA)</h3><p class="date">May 2023–Mar 2025</p></div><p class="entry-subtitle">First author, ICSE 2026 · Johns Hopkins University SecLab</p>
+<ul><li>Built a PHP static analyzer that found 54 previously unknown vulnerabilities in 19 applications; 9 CVE IDs were assigned.</li></ul></article>
+<article class="entry"><div class="entry-row"><h3>JavaScript vulnerability analysis at NPM scale (FAST)</h3><p class="date">May 2021–Nov 2022</p></div><p class="entry-subtitle">Second author, IEEE S&amp;P 2023 · Johns Hopkins University SecLab</p>
+<ul><li>Implemented JavaScript abstract interpretation and led evaluation of a Node.js analyzer that found 242 previously unknown vulnerabilities in npm packages.</li></ul></article>
+</section>
+<section aria-labelledby="experience"><h2 id="experience">Experience</h2>
+<article class="entry"><div class="entry-row"><h3>Core Engineer · Jay-I-break team (JHU)</h3><p class="date">Feb 2026–Present</p></div><p class="entry-subtitle">2026 Amazon Nova AI Challenge · Competition project</p><ul><li>Maintained 8 agentic pipelines for software vulnerability discovery. Developed 1 black-box analysis pipeline and 2 dynamic analysis pipelines.</li></ul></article>
+<article class="entry"><div class="entry-row"><h3>Research Assistant · Johns Hopkins University SecLab</h3><p class="date">Sep 2021–Present</p></div></article>
+<article class="entry"><div class="entry-row"><h3>Research Assistant Intern · China Academy of Industrial Internet</h3><p class="date">Dec 2020–Mar 2021</p></div><ul><li>Designed a Hyperledger Fabric framework for product traceability, with access controls for business-sensitive records.</li></ul></article>
+</section>
+<section aria-labelledby="software"><h2 id="software">Open-source Software</h2>
+<p class="software-row"><strong>Joern (Scala).</strong> Contributed PHP version-check fixes, five security-query classes and regression tests. <a href="https://github.com/joernio/joern/pull/5327">PR #5327 merged.</a></p>
+<p class="software-row"><strong><a href="https://github.com/samhsu-dev/harvest-claude">Harvest Claude (Rust).</a></strong> Built a terminal dashboard that visualizes Claude Code sessions as animated farm characters.</p>
+</section>
+</main>
+</body></html>

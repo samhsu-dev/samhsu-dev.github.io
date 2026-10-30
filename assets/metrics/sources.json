@@ -1,0 +1,11 @@
+{
+  "scholar": {
+    "library": "bibliometrics",
+    "version": "4.1.0",
+    "project": "https://github.com/cicirello/bibliometrics",
+    "profile": "https://scholar.google.com/citations?user=I8e-vacAAAAJ&hl=en",
+    "scope": "All-time citations and h-index",
+    "configuration": ".bibliometrics.config.json",
+    "rendering": "Jinja template; statistics are read from bibliometrics JSON without recomputing them."
+  }
+}

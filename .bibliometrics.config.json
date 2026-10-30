@@ -1,0 +1,9 @@
+{
+  "scholarID": "I8e-vacAAAAJ",
+  "jsonOutputFile": "assets/metrics/scholar.json",
+  "include": [
+    "total-cites",
+    "h-index"
+  ],
+  "svgConfig": []
+}

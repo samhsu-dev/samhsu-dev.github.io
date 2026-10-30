@@ -1,0 +1,24 @@
+{
+  "link_icons": {
+    "project": "Bootstrap Icons",
+    "revision": "829d2bc2b87543c7d781c815ca4f0feee8cf9e45",
+    "source": "https://raw.githubusercontent.com/twbs/icons/829d2bc2b87543c7d781c815ca4f0feee8cf9e45/",
+    "license": "MIT; LICENSE.txt",
+    "modification": "Fill changed to JHU Heritage Blue (#002d72)."
+  },
+  "conference_marks": {
+    "icse-2026.png": "https://www.icse-conferences.org/images/icse-2026-logo.png",
+    "ieee-sp-2023.png": "https://www.ieee-security.org/TC/SP2023/images/favicon.png"
+  },
+  "research_direction_icons": {
+    "project": "Bootstrap Icons",
+    "revision": "829d2bc2b87543c7d781c815ca4f0feee8cf9e45",
+    "files": [
+      "diagram-3.svg",
+      "robot.svg"
+    ],
+    "source": "https://raw.githubusercontent.com/twbs/icons/829d2bc2b87543c7d781c815ca4f0feee8cf9e45/icons/",
+    "license": "MIT; LICENSE.txt",
+    "modification": "Fill changed to JHU Heritage Blue (#002d72)."
+  }
+}
