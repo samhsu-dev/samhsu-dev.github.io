@@ -219,12 +219,12 @@
   "Next:": "下一步：",
   "Related work:": "相关工作：",
   "Exploring:": "正在探索：",
-  "I build tools that analyze software behavior to find security flaws.": "我开发分析软件行为的工具，用于发现安全缺陷。",
-  "Developed tools for finding vulnerabilities in PHP and JavaScript software.": "开发了检测 PHP 和 JavaScript 软件漏洞的分析工具。",
-  "Use agents to strengthen security tools, focusing on business-rule violations such as accepting an underpaid order.": "利用智能体增强安全工具，关注违反业务规则的行为，例如结账时接受支付不足的订单。",
-  "Extend this analysis across languages and applications, including those without source-code access.": "将这类分析扩展到更多语言和应用，包括无法获取源代码的场景。",
   "I also study security risks in AI systems that plan tasks and use tools.": "我也研究能够规划任务、调用工具的 AI 系统自身的安全风险。",
-  "Studied how conversation affects an AI assistant's cybersecurity assistance.": "研究了对话上下文如何影响 AI 助手提供的网络安全协助。",
   "How can such logic vulnerabilities be detected and prevented?": "如何发现和预防这类逻辑漏洞？",
-  "How can context and multi-step actions cause agents to act beyond their assigned task?": "上下文与多步操作可能如何导致智能体偏离既定任务或超出授权范围？"
+  "How can context and multi-step actions cause agents to act beyond their assigned task?": "上下文与多步操作可能如何导致智能体偏离既定任务或超出授权范围？",
+  "I study how automated analysis can uncover vulnerabilities hidden in complex software behavior.": "我研究如何通过自动化分析，发现复杂软件行为中隐藏的安全缺陷。",
+  "Addressed blind spots in analyzing dynamic language behavior, uncovering previously unknown vulnerabilities: 54 in 19 real-world PHP applications (CoBrA) and 242 in npm packages (FAST).": "针对动态语言行为造成的分析盲区，发现此前未知的漏洞：CoBrA 在 19 个真实 PHP 应用中发现 54 个，FAST 在 npm 软件包中发现 242 个。",
+  "Detect business-rule violations, such as accepting an underpaid order, by using agents to bring application context into security analysis.": "利用智能体将应用上下文引入安全分析，识别违反业务规则的行为，例如结账时接受支付不足的订单。",
+  "Find and validate business-logic vulnerabilities across languages and applications, including settings without source-code access.": "在更多语言和应用中发现并验证业务逻辑漏洞，包括无法获取源代码的场景。",
+  "Showed that prior dialogue changes assistance on identical cybersecurity requests, highlighting the need to evaluate safety boundaries across conversational contexts.": "发现相同安全请求会因先前对话而得到不同程度的协助，说明安全边界的评估需要考虑对话上下文。"
 }
