@@ -1,13 +1,178 @@
 # Yichao Xu
 
-> Research profile for Yichao Xu, a computer science PhD candidate at Johns Hopkins University working on software security.
-
-## Instructions for Agents
-
-- Use the research profile for descriptions of research interests, selected publications, and public projects.
-- Distinguish the predefined teaching example from a running security analyzer.
-- Use the linked publication and project sources to verify claims before reuse.
+> Computer Science PhD candidate at Johns Hopkins University researching software vulnerability discovery and agentic security.
 
 ## Profile
 
-- [Research and selected work](llms/profile.md): Research, publications, software, experience, education, teaching, honors, and contact links.
+- Name: Yichao Xu; also uses Sam Hsu on GitHub.
+- Affiliation: Johns Hopkins University, Department of Computer Science, SecLab.
+- Advisor: [Yinzhi Cao](https://www.yinzhicao.org/).
+- Location: Baltimore, Maryland, United States.
+- Research areas: program analysis, software security, vulnerability discovery, and agentic security.
+- Website: https://samhsu-dev.github.io/
+- Chinese website: https://samhsu-dev.github.io/index-zh.html
+- English CV: https://samhsu-dev.github.io/cv.html
+- Chinese CV: https://samhsu-dev.github.io/cv-zh.html
+- Email: yxu166@jhu.edu
+- GitHub: https://github.com/samhsu-dev
+- LinkedIn: https://www.linkedin.com/in/yichaoxu-jhu/
+- Google Scholar: https://scholar.google.com/citations?user=I8e-vacAAAAJ&hl=en
+
+## Research focus
+
+I study how to find vulnerabilities that automated tools struggle to analyze, and how AI agents can make security analysis more effective without introducing new security risks.
+
+- **Program analysis:** uncovering injection vulnerabilities and business-logic flaws in web applications and software packages, especially when dynamic language behavior or application state makes analysis difficult. My work includes static analysis, abstract interpretation, code property graphs, and fuzzing.
+- **Agentic security:** both using agents for security analysis and studying the security of agentic systems. I work on agents that assist static and dynamic analysis, generate and validate tests, and discover vulnerabilities. I also study how these systems can be misled or exploited, and how evaluation can distinguish reliable capabilities from behavior dependent on conversational context or recognizable benchmark tasks.
+
+## How I describe my strengths
+
+The following is my own assessment of my abilities and research fit.
+
+I combine depth in program analysis with the engineering ability to build working security research systems. My strongest attribute is research ownership: I can develop an analysis method, implement it, and carry the work through empirical evaluation. CoBrA reflects this combination through my first-author research and implementation of a PHP vulnerability analyzer; FAST reflects my experience implementing abstract interpretation and leading a large empirical evaluation.
+
+I am particularly strong at connecting research ideas with usable tools. My work spans static analyzers, dynamic testing, agentic vulnerability-discovery pipelines, and developer tools. Maintaining 8 agentic pipelines while developing black-box and dynamic analysis pipelines has broadened my experience beyond individual prototypes. My merged Joern contribution and public tools also show that I can work with existing software and build tools for other developers.
+
+I see my best fit in research and research-engineering roles in software security, program analysis, and agentic security. I bring both experience investigating analysis problems and the ability to implement, debug, and evaluate the systems needed to study them.
+
+## Research and publications
+
+### CoBrA — PHP vulnerability discovery
+
+- Publication: **CoBrA: Context-, Branch-sensitive Static Analysis for Detecting Taint-style Vulnerabilities in PHP Web Applications**.
+- Venue and status: ICSE 2026; published.
+- Authors: Yichao Xu, Mingqing Kang, Neil Thimmaiah, Rigel Gjomemo, V. N. Venkatakrishnan, Yinzhi Cao.
+- My contribution: first author and lead engineer; designed and built the Kotlin static analyzer for PHP applications.
+- Problem: dynamic PHP features, including dynamically constructed function calls, make it difficult to resolve program behavior and track unsafe flows of untrusted input.
+- Method: context- and branch-sensitive static analysis, using an abstract domain graph and a stretch-relax algorithm to resolve dynamic behavior and analyze taint propagation across functions.
+- Results: the evaluation found **54 previously unknown vulnerabilities in 19 real-world applications**, with **9 CVE identifiers assigned**, as reported in the paper.
+- Benchmark results: 88.66% detection of known vulnerabilities with a false-positive rate below 0.3% on the PHP tarpits benchmark. These rates describe that benchmark, not all PHP applications.
+- Research period: May 2023–Mar 2025, Johns Hopkins University SecLab.
+- Paper: https://dl.acm.org/doi/10.1145/3744916.3773195
+- PDF: https://www.yinzhicao.org/COBRA/cobra.pdf
+- Code and datasets: https://github.com/jhu-seclab-cobra
+
+### FAST — scalable JavaScript vulnerability analysis
+
+- Publication: **Scaling JavaScript Abstract Interpretation to Detect and Exploit Node.js Taint-style Vulnerability**.
+- Venue and status: IEEE Symposium on Security and Privacy, 2023; published.
+- Authors: Mingqing Kang, Yichao Xu, Song Li, Rigel Gjomemo, Jianwei Hou, V. N. Venkatakrishnan, Yinzhi Cao.
+- My contribution: second author; implemented JavaScript abstract interpretation and led the evaluation, including reproducing 4 prior analyzers and building comparison and debugging utilities.
+- Problem: JavaScript's dynamic behavior makes accurate analysis expensive, while scalable approximations can miss vulnerabilities or produce inaccurate results.
+- Method: bottom-up abstract interpretation resolves dynamic call relationships; top-down interpretation follows relevant paths, prunes unrelated statements, and checks constraints to assess exploitability.
+- Results: the study found **242 previously unknown vulnerabilities in npm packages**, with **21 CVE identifiers assigned**. These are results of the collaborative study.
+- Research period: May 2021–Nov 2022, Johns Hopkins University SecLab.
+- Paper: https://ieeexplore.ieee.org/document/10179352
+- PDF: https://www.yinzhicao.org/FAST/ODGen-FAST.pdf
+- Code: https://github.com/fast-sp-2023/fast
+
+### AnonVul — evaluating vulnerability-discovery agents
+
+- Publication: **Discovery or Memorization? A Faithful Benchmark for Real-World Business-Logic Vulnerability Discovery**.
+- Status: arXiv preprint, 2026.
+- Authors: Rui Yang, Yichao Xu, Zhuohao Zhang, Jiahao Ji, Chaowei Xiao, Yinzhi Cao, Ziyang Li.
+- My role: co-author; second author in the author list.
+- Research question: do agents discover business-logic vulnerabilities, or do recognizable software identities and previously encountered information affect measured performance?
+- Method: anonymized vulnerability tasks, sandboxed execution, and expert-specified checks of successful discovery.
+- Contribution of the study: a benchmark for examining the difference between vulnerability discovery and memorization in agent evaluation.
+- Paper: https://arxiv.org/abs/2610.17542
+- PDF: https://arxiv.org/pdf/2610.17542
+
+### Conversational context and cybersecurity assistance
+
+- Publication: **Same Request, Different Boundary: Evaluating Cybersecurity Assistance across Conversational Contexts**.
+- Status: arXiv preprint, 2026.
+- Authors: Rui Yang, Yang Hong, Yichao Xu, Zhengyu Liu, Yinzhi Cao, Ziyang Li.
+- My role: co-author.
+- Research question: how does preceding conversation change an LLM's response to the same cybersecurity request?
+- Method: 3R-Bench compares identical requests across different conversational histories and distinguishes refusal, bounded assistance, compliance, and provider blocking.
+- Contribution of the study: evidence about the dependence of cybersecurity assistance on conversational context, relevant to understanding the security behavior of systems built around language models.
+- Paper: https://arxiv.org/abs/2609.00578
+- PDF: https://arxiv.org/pdf/2609.00578
+
+### Earlier publication
+
+- **A Denial of Services Attack for IOT System**. Science and Wealth, Jun 2018. ISSN 1671-2226.
+
+## Software and open-source contributions
+
+### Harvest Claude
+
+- A Rust terminal application for monitoring Claude Code sessions through animated farm characters, showing active, idle, and waiting states.
+- Engineering focus: developer tooling, terminal interfaces, and visualization of agent activity.
+- Minimal usage: install from the repository with `cargo install --path .`, then run `harvest-claude`; requires Rust 1.85 or later and a terminal with 24-bit color support.
+- Repository: https://github.com/samhsu-dev/harvest-claude
+
+### Joern
+
+- Upstream contributor to Joern, a code property graph tool for code analysis. My contribution is to the PHP frontend and security queries.
+- Added queries for 5 vulnerability classes: SQL injection, command injection, code injection, unsafe file operations, and cross-site scripting; included positive and negative regression tests.
+- Fixed PHP version checking for distribution-specific version strings.
+- Pull request #5327 was merged on Feb 28, 2025.
+- Contribution: https://github.com/joernio/joern/pull/5327
+- Upstream repository: https://github.com/joernio/joern
+
+### cpg2py
+
+- A Python library for loading code property graphs exported by Joern and querying their nodes and relationships.
+- Minimal example, after installing `cpg2py` and supplying exported `nodes.csv` and `rels.csv` files:
+
+```python
+from pathlib import Path
+from cpg2py import cpg_graph
+
+graph = cpg_graph(Path("nodes.csv"), Path("rels.csv"))
+for node in graph.nodes(lambda n: n.type == "Function"):
+    print(node.name)
+```
+
+- Repository: https://github.com/samhsu-dev/cpg2py
+
+### ripsv0.5-cli
+
+- A command-line adaptation of the legacy RIPS v0.5 PHP analyzer, adding command-line options and JSON reporting without requiring the web interface.
+- My work adapts the existing analyzer for command-line use; the original analysis engine is discontinued.
+- Minimal usage from the cloned repository: `php rips.php /path/to/php/project --vector=xss --format=json`.
+- Repository: https://github.com/samhsu-dev/ripsv0.5-cli
+
+## Experience
+
+- **Jay-I-break team, Johns Hopkins University — Core Engineer, Feb 2026–Present.** Participated in the 2026 Amazon Nova AI Challenge. Maintained 8 agentic pipelines for software vulnerability discovery; developed 1 black-box analysis pipeline and 2 dynamic analysis pipelines. This is university competition work, not employment at Amazon.
+- **China Academy of Industrial Internet — Research Assistant Intern, Dec 2020–Mar 2021, Beijing.** Designed a Hyperledger Fabric framework for product traceability and access control over business-sensitive records.
+- **Johns Hopkins University SecLab — Research Assistant, Sep 2021–Present.** Research on static analysis, fuzzing, and software vulnerability discovery, including CoBrA and FAST.
+- **Johns Hopkins University S4 Lab — Research Assistant Intern, Sep 2022–2023.** Built C++ simulations of vehicular-network denial-of-service attacks and defenses using OMNeT++.
+- **University College London — Research Assistant, Jun–Sep 2020.** Built a Python tool that links test methods to source methods through co-evolution in Git repositories.
+
+## Education
+
+- **Johns Hopkins University — PhD, Computer Science, Jan 2023–Present.** Advisor: Yinzhi Cao. Expected completion: Dec 2027.
+- **Johns Hopkins University — MS, Security Informatics, Sep 2021–Dec 2022.**
+- **University College London — MSc, Software Systems Engineering, Sep 2019–Oct 2020.** Distinction.
+- **University of Liverpool and Xi'an Jiaotong-Liverpool University — BSc (Honours), Information and Computing Science, 2015–2019.** 2+2 joint programme; First Class Honours.
+
+## Teaching
+
+- **Language-Based Security — Teaching Assistant, Johns Hopkins University, 2025.** Instructor: Yinzhi Cao.
+- **Practical Cryptographic Systems — Teaching Assistant, Johns Hopkins University, 2023.** Instructor: Matthew Green. Course: https://spar.isi.jhu.edu/~mgreen/650.445/650.445__Main.html
+- **Future Networks — Course Assistant, Johns Hopkins University, 2022.** Instructor: Krishan Sabnani.
+
+## Honors
+
+- **Outstanding Achievement, BOSCH CHINA IoT TECH HACKATHON, Jul 2018.**
+
+## Technical background
+
+- Program analysis: static analysis, abstract interpretation, taint analysis, code property graphs, and analysis of dynamic PHP and JavaScript behavior.
+- Security testing: fuzzing, dynamic analysis, injection vulnerabilities, business-logic vulnerability discovery, and evaluation of security tools.
+- Agentic systems: agent-assisted security analysis, vulnerability-discovery pipelines, and evaluation of LLM cybersecurity assistance.
+- Implementation experience includes Kotlin, Python, JavaScript, PHP, C++, Rust, and Scala, across research systems and public software contributions.
+- Research engineering: implementing analyzers, reproducing baseline tools, constructing evaluations, debugging analysis discrepancies, and contributing regression tests to upstream software.
+
+## CoBrA interactive explanation on the website
+
+- The homepage includes a collapsed teaching example adapted from CoBrA's Emoncms example. It illustrates the method with predefined code and graph states.
+- **Phase I — Dependency Generation:** local abstract interpretation records dependencies within each function; context-dependent values remain unresolved in the abstract domain graph.
+- **Phase II — Call Paths Generation:** lightweight interpretation uses calling contexts to resolve dynamic calls and construct candidate paths from untrusted input to sensitive operations.
+- **Phase III — Vulnerabilities Detection:** more detailed interpretation checks branch conditions and data flows along candidate paths, removing infeasible candidates and identifying surviving taint flows.
+- Visitors can compare feed and admin calling contexts. The reduced example illustrates how `get_engine(0)` eventually selects `MySqlEngine` over `OtherSqlEngine`.
+- This is an interactive explanation of a published method. It does not execute PHP, SQL, or the CoBrA analyzer.
