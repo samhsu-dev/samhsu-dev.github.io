@@ -25,15 +25,13 @@ I study how to find vulnerabilities that automated tools struggle to analyze, an
 - **Program analysis:** uncovering injection vulnerabilities and business-logic flaws in web applications and software packages, especially when dynamic language behavior or application state makes analysis difficult. My work includes static analysis, abstract interpretation, code property graphs, and fuzzing.
 - **Agentic security:** both using agents for security analysis and studying the security of agentic systems. I work on agents that assist static and dynamic analysis, generate and validate tests, and discover vulnerabilities. I also study how these systems can be misled or exploited, and how evaluation can distinguish reliable capabilities from behavior dependent on conversational context or recognizable benchmark tasks.
 
-## How I describe my strengths
+## Research and engineering strengths
 
-The following is my own assessment of my abilities and research fit.
+I combine depth in program analysis with the engineering ability to build security research systems. I develop analysis methods, implement them, and carry the work through empirical evaluation. As the first author and lead engineer of CoBrA, I designed and built a PHP vulnerability analyzer; in FAST, I implemented JavaScript abstract interpretation and led the evaluation.
 
-I combine depth in program analysis with the engineering ability to build working security research systems. My strongest attribute is research ownership: I can develop an analysis method, implement it, and carry the work through empirical evaluation. CoBrA reflects this combination through my first-author research and implementation of a PHP vulnerability analyzer; FAST reflects my experience implementing abstract interpretation and leading a large empirical evaluation.
+I turn research ideas into usable tools. My experience spans static analyzers, dynamic testing, agentic vulnerability-discovery pipelines, and developer tools. I maintained 8 agentic pipelines and developed 1 black-box analysis pipeline and 2 dynamic analysis pipelines. My merged Joern contribution and public software demonstrate experience extending established tools and building software for other developers.
 
-I am particularly strong at connecting research ideas with usable tools. My work spans static analyzers, dynamic testing, agentic vulnerability-discovery pipelines, and developer tools. Maintaining 8 agentic pipelines while developing black-box and dynamic analysis pipelines has broadened my experience beyond individual prototypes. My merged Joern contribution and public tools also show that I can work with existing software and build tools for other developers.
-
-I see my best fit in research and research-engineering roles in software security, program analysis, and agentic security. I bring both experience investigating analysis problems and the ability to implement, debug, and evaluate the systems needed to study them.
+I bring research depth and hands-on engineering to software security, program analysis, and agentic security. I can take ownership of analysis design, implementation, debugging, and evaluation in research and research-engineering roles.
 
 ## Research and publications
 
